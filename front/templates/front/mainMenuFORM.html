@@ -1,0 +1,30 @@
+   {% block menu %}
+   {% load static %}
+<!-- BEGIN: Main Menu-->
+    <div class="main-menu menu-fixed menu-dark menu-accordion menu-shadow" data-scroll-to-active="true">
+        <div class="navbar-header">
+            <ul class="nav navbar-nav flex-row">
+                <li class="nav-item mr-auto"><a class="navbar-brand" href="{% url 'main-page' %}">
+                        <div class="brand-logo"><img class="logo" src="{% static 'front/app-assets/images/logo/agelogo.png' %}" /></div>
+                        <h2 class="brand-text mb-0">Curr.age</h2>
+                    </a></li>
+                <li class="nav-item nav-toggle"><a class="nav-link modern-nav-toggle pr-0" data-toggle="collapse"><i class="bx bx-x d-block d-xl-none font-medium-4 primary"></i><i class="toggle-icon bx bx-disc font-medium-4 d-none d-xl-block primary" data-ticon="bx-disc"></i></a></li>
+            </ul>
+        </div>
+        <div class="shadow-bottom"></div>
+
+        <div class="main-menu-content">
+            <ul class="navigation navigation-main" id="main-menu-navigation" data-menu="menu-navigation" data-icon-style="lines">
+
+                <li {% if request.path == '/' %}class="active nav-item"{% endif %}><a href="{% url 'main-page' %}"><i class="bx bx-home" data-icon="desktop"></i><span class="menu-title" data-i18n="Dashboard">Home</span></a></li>
+                <li {% if request.path == '/indexes' %}class="active nav-item" {% endif %}><a href="{% url 'indexes' %}"><i class="bx bxl-bitcoin"></i><span class="menu-item" data-i18n="List">Indexes</span></a></li>
+                <li><a href=""><i class="bx bx-dollar-circle"></i><span class="menu-item" data-i18n="List">Buy</span></a></li>
+                <li><a href=""><i class="bx bx-purchase-tag"></i><span class="menu-item" data-i18n="List">Sell</span></a></li>
+                <li><a href=""><i class="bx bx-repeat"></i><span class="menu-item" data-i18n="List">Trade</span></a></li>
+
+            </ul>
+
+        </div>
+    </div>
+    <!-- END: Main Menu-->
+   {% endblock %}

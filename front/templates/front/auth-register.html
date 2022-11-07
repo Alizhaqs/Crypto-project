@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html class="loading" lang="en" data-textdirection="ltr">
+    <!-- BEGIN: Head-->
+
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0" />
+        <meta name="description" content="Frest admin is super flexible, powerful, clean &amp; modern responsive bootstrap 4 admin template with unlimited possibilities." />
+        <meta name="keywords" content="admin template, Frest admin template, dashboard template, flat admin template, responsive admin template, web app" />
+        <meta name="author" content="PIXINVENT" />
+        <title>Register Page - Frest - Bootstrap HTML admin template</title>
+
+    {% block cssLoader %}
+    {% include 'front/cssLoader.html' %}
+    {% endblock cssLoader %}
+    </head>
+    <!-- END: Head-->
+
+    <!-- BEGIN: Body-->
+
+    <body class="vertical-layout vertical-menu-modern dark-layout 1-column navbar-sticky footer-static" data-open="click" data-menu="vertical-menu-modern" data-col="1-column" data-layout="semi-dark-layout">
+        <!-- BEGIN: Content-->
+        <div class="app-content content">
+            <div class="content-overlay"></div>
+            <div class="content-wrapper">
+                <div class="content-header row"></div>
+                <div class="content-body">
+                    <!-- register section starts -->
+                    <section class="row flexbox-container justify-content-center pb-3">
+                        <div class="col-md-8 col-12">
+                            <div class="card mb-0">
+                                <form action="{% url 'auth-register' %}" method="post" >
+                                      {% csrf_token %}
+                                    <div class="row m-0 py-3">
+                                        <!-- register section left -->
+                                        <div class="col-md-12 col-12 px-md-3 px-1">
+                                            <div class="card">
+                                                <div class="card-header pb-1">
+                                                    <div class="card-title">
+                                                        <h4 class="text-center">Регистрация </h4>
+                                                    </div>
+                                                </div>
+                                                <div class="text-center">
+                                                    <p><small> Пожалуйста, заполните внимательно все поля. Данная информация понадобится для принятия решения модераторами сервиса</small></p>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-md-12 col-12 px-md-3 px-1">
+                                            <div class="row">
+                                                 <div class="col-12">
+                                                                    <div class="form-group">
+                                                                        <div class="controls">
+                                                                            <label>Логин</label>
+                                                                            <input type="text" class="form-control" name = "username" placeholder="Логин" value="{{username}}" required data-validation-required-message="This login field is required">
+                                                                            {% if error == 1 %}
+                                                                             <div class="help-block"><ul role="alert"><li>Данный Логин уже используется</li></ul></div>
+                                                                            {% endif %}
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                <div class="col-12">
+                                                    <div class="form-group mb-50">
+                                                        <label for="firstname">Название компании</label>
+                                                        <input type="text" class="form-control" id="firstname" placeholder="Название компании" name="name"/>
+                                                    </div>
+                                                    <div class="form-group mb-50">
+                                                        <label for="email">Email</label>
+                                                        <input type="email" class="form-control" id="email" placeholder="Email" name="email"/>
+                                                        {% if error == 3 %}
+                                                        <div class="help-block"><ul role="alert"><li>Данный Email уже используется</li></ul></div>
+                                                        {% elif error == 4 %}
+                                                        <div class="help-block"><ul role="alert"><li>Данный Email уже проходит верификацию</li></ul></div>
+                                                        {% endif %}
+                                                    </div>
+
+                                                    <div class="form-group mb-50">
+                                                        <label class="text-bold-600" for="password">Пароль</label>
+                                                        <input type="password" class="form-control" id="password" placeholder="Пароль" name="password" />
+                                                    </div>
+                                                    <div class="form-group mb-2">
+                                                        <label class="text-bold-600" for="exampleInputPassword1">Повторите пароль</label>
+                                                        <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Повторите пароль" name="re_password"/>
+                                                        {% if error == 2 %}
+                                                         <div class="help-block"><ul role="alert"><li>Пароли не совпадают</li></ul></div>
+                                                        {% endif %}
+                                                    </div>
+                                                </div>
+
+
+                                                <div class="col-12">
+                                                    <button type="submit" class="btn btn-primary glow position-relative w-100">Регистрация<i id="icon-arrow" class="bx bx-right-arrow-alt"></i></button>
+
+                                                    <hr />
+                                                    <div class="text-center">
+                                                        <small class="mr-25">Уже есть аккаунт?</small><a href="{% url 'login' %}"><small>Войти</small> </a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </section>
+                    <!-- register section endss -->
+                </div>
+            </div>
+        </div>
+        <!-- END: Content-->
+
+
+
+    {% block jsLoader %}
+    {% include 'front/jsLoader.html' %}
+    {% endblock jsLoader %}
+    </body>
+    <!-- END: Body-->
+</html>

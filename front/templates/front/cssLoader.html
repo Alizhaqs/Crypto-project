@@ -1,0 +1,42 @@
+    {% block cssLoad %}
+    {% load static %}
+        <link rel="apple-touch-icon" href="{% static 'front/app-assets/images/ico/apple-icon-120.png' %}">
+    <link rel="shortcut icon" type="image/x-icon" href="{% static 'front/app-assets/images/logo/favicon-32x32.png' %}">
+    <link href="https://fonts.googleapis.com/css?family=Rubik:300,400,500,600%7CIBM+Plex+Sans:300,400,500,600,700" rel="stylesheet">
+
+
+    <!-- BEGIN: Vendor CSS-->
+    <link rel="stylesheet" type="text/css" href="{% static 'front/app-assets/vendors/css/vendors.min.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'front/app-assets/vendors/css/tables/datatable/datatables.min.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'front/app-assets/vendors/css/charts/apexcharts.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'front/app-assets/vendors/css/extensions/swiper.min.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'front/app-assets/vendors/css/forms/select/select2.min.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'front/app-assets/vendors/css/pickers/pickadate/pickadate.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'front/app-assets/vendors/css/ui/prism.min.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'front/app-assets/vendors/css/file-uploaders/dropzone.min.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'front/app-assets/vendors/css/animate/animate.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'front/app-assets/vendors/css/extensions/sweetalert2.min.css' %}">
+    <!-- END: Vendor CSS-->
+
+    <!-- BEGIN: Theme CSS-->
+    <link rel="stylesheet" type="text/css" href="{% static 'front/app-assets/css/bootstrap.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'front/app-assets/css/bootstrap-extended.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'front/app-assets/css/colors.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'front/app-assets/css/components.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'front/app-assets/css/themes/dark-layout.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'front/app-assets/css/themes/semi-dark-layout.css' %}">
+    <!-- END: Theme CSS-->
+
+    <!-- BEGIN: Page CSS-->
+    <link rel="stylesheet" type="text/css" href="{% static 'front/app-assets/css/core/menu/menu-types/vertical-menu.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'front/app-assets/css/pages/dashboard-ecommerce.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'front/app-assets/css/plugins/forms/validation/form-validation.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'front/app-assets/css/plugins/file-uploaders/dropzone.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'front/app-assets/css/pages/authentication.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'front/app-assets/css/pages/page-users.css' %}">
+    <!-- END: Page CSS-->
+
+    <!-- BEGIN: Custom CSS-->
+   <link rel="stylesheet" type="text/css" href="{% static 'front/assets/css/style.css' %}">
+      <!-- END: Custom CSS-->
+{% endblock cssLoad %}

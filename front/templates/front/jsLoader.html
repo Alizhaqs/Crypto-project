@@ -1,0 +1,68 @@
+{% block jsLoader %}
+{% load static %}
+<!-- BEGIN: Vendor JS-->
+    <script src="{% static 'front/app-assets/vendors/js/vendors.min.js' %}"></script>
+    <script src="{% static 'front/app-assets/fonts/LivIconsEvo/js/LivIconsEvo.tools.js' %}"></script>
+    <script src="{% static 'front/app-assets/fonts/LivIconsEvo/js/LivIconsEvo.defaults.js' %}"></script>
+    <script src="{% static 'front/app-assets/fonts/LivIconsEvo/js/LivIconsEvo.min.js' %}"></script>
+    <!-- BEGIN Vendor JS-->
+
+    <!-- BEGIN: Page Vendor JS-->
+    <script src="{% static 'front/app-assets/vendors/js/tables/datatable/datatables.min.js' %}"></script>
+    <script src="{% static 'front/app-assets/vendors/js/tables/datatable/datatables.checkboxes.min.js' %}"></script>
+    <script src="{% static 'front/app-assets/vendors/js/charts/apexcharts.min.js' %}"></script>
+    <script src="{% static 'front/app-assets/vendors/js/extensions/swiper.min.js' %}"></script>
+    <script src="{% static 'front/app-assets/vendors/js/pickers/daterange/moment.min.js' %}"></script>
+
+    <script src="{% static 'front/app-assets/vendors/js/forms/select/select2.full.min.js' %}"></script>
+    <script src="{% static 'front/app-assets/vendors/js/pickers/pickadate/picker.js' %}"></script>
+    <script src="{% static 'front/app-assets/vendors/js/pickers/pickadate/picker.date.js' %}"></script>
+    <script src="{% static 'front/app-assets/vendors/js/extensions/dropzone.min.js' %}"></script>
+    <script src="{% static 'front/app-assets/vendors/js/extensions/dropzone.min.js' %}"></script>
+    <script src="{% static 'front/app-assets/vendors/js/ui/prism.min.js' %}"></script>
+    <script src="{% static 'front/app-assets/vendors/js/forms/repeater/jquery.repeater.min.js' %}"></script>
+    <!-- END: Page Vendor JS-->
+
+    <!-- BEGIN: Theme JS-->
+    <script src="{% static 'front/app-assets/js/scripts/configs/vertical-menu-dark.js' %}"></script>
+    <script src="{% static 'front/app-assets/js/core/app-menu.js' %}"></script>
+    <script src="{% static 'front/app-assets/js/core/app.js' %}"></script>
+    <script src="{% static 'front/app-assets/js/scripts/components.js' %}"></script>
+    <script src="{% static 'front/app-assets/js/scripts/footer.js' %}"></script>
+    <script src="{% static 'front/app-assets/js/scripts/maskedinput.js' %}"></script>
+    <!-- END: Theme JS-->
+
+    <script>
+        $(".phone").mask("+9(999) 999-9999");
+        $(".time").mask("99:99 - 99:99");
+    </script>
+  <script src="{% static 'front/app-assets/js/cookie.js' %}"></script>
+ <script>
+
+        $('a[data-toggle="pill"]').click(function() {
+                //alert($(this).attr('href'));
+                pill = $(this).attr('href');
+                setCookie("pill", pill);
+        });
+        window.onload = function() {
+            selpill = getCookie("pill");
+            //(selpill);
+            $(".tab-pane").removeClass("active show");
+             $(".nav-item a").removeClass("active");
+            $(selpill).addClass("active show");
+            $(".nav-item a[href='"+selpill+"']").addClass("active show");
+        }
+
+    </script>
+    <!-- BEGIN: Page JS-->
+    <script src="{% static 'front/app-assets/js/scripts/pages/dashboard-ecommerce.js' %}"></script>
+    <!-- END: Page JS-->
+    <!-- BEGIN: Page JS-->
+        <script src="{% static 'front/app-assets/js/scripts/pages/table-extended.js' %}"></script>
+
+    <script src="{% static 'front/app-assets/js/scripts/pages/page-account-settings.js' %}"></script>
+    <script src="{% static 'front/app-assets/js/scripts/extensions/dropzone.js' %}"></script>
+    <script src="{% static 'front/app-assets/js/scripts/forms/form-repeater.js' %}"></script>
+    <script src="{% static 'front/app-assets/js/scripts/extensions/sweet-alerts.js' %}" aria-hidden="true"></script>
+    <!-- END: Page JS-->
+{% endblock jsLoader %}
